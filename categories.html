@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Bibliotheca</title>
+
+  <!-- Google Fonts: Momo Trust Display (headings) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Momo+Trust+Display&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 + Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="d-md-flex">
+      <!-- ========== Sidebar (offcanvas on mobile, fixed panel on md+) ========== -->
+      <aside
+        class="sidebar offcanvas-md offcanvas-start d-flex flex-column"
+        tabindex="-1"
+        id="sidebar"
+        aria-labelledby="sidebarLabel"
+      >
+        <div class="offcanvas-header d-md-none">
+          <h5 class="offcanvas-title visually-hidden" id="sidebarLabel">
+            Menu
+          </h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white ms-auto"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#sidebar"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column">
+          <div
+            class="sidebar-logo d-flex align-items-center justify-content-center"
+          >
+            Logo
+          </div>
+
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a
+                href="dashboard.html"
+                class="nav-link active"
+                aria-current="page"
+                ><i class="bi bi-house"></i> Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="books.html" class="nav-link"
+                ><i class="bi bi-book"></i> Books</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="borrowing.html" class="nav-link"
+                ><i class="bi bi-clock"></i> Borrowing</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="return.html" class="nav-link"
+                ><i class="bi bi-arrow-repeat"></i> Return</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="members.html" class="nav-link"
+                ><i class="bi bi-person-circle"></i> Members</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="categories.html" class="nav-link"
+                ><i class="bi bi-tags"></i> Categories</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link"
+                ><i class="bi bi-graph-up"></i> Analytics</a
+              >
+            </li>
+          </ul>
+
+          <div class="sidebar-footer mt-auto">
+            <div class="sidebar-user d-flex align-items-center gap-2">
+              <i class="bi bi-person"></i> Administrator
+            </div>
+            <form action="#" method="POST">
+              <!-- Laravel: add @csrf here -->
+              <button type="submit" class="btn btn-logout w-100">Logout</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ========== Main ========== -->
+      <div class="flex-grow-1 d-flex flex-column min-vh-100">
+        <!-- Mobile top bar -->
+        <header
+          class="mobile-topbar d-flex d-md-none align-items-center justify-content-between"
+        >
+          <div
+            class="sidebar-logo d-flex align-items-center justify-content-center"
+          >
+            Logo
+          </div>
+          <button
+            class="btn btn-menu"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="sidebar"
+            aria-label="Open menu"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+        </header>
+
+        <main class="main-content">
+          <!-- Header -->
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Welcome, admin</p>
+
+          <!-- Stat cards -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
+            <div class="col">
+              <a href="#" class="stat-card stat-card--teal">
+                <i class="bi bi-bookshelf stat-icon"></i>
+                <div class="stat-body">
+                  <p class="stat-label">Total Books</p>
+                  <p class="stat-value">150</p>
+                </div>
+                <i class="bi bi-chevron-right stat-arrow"></i>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#" class="stat-card stat-card--cyan">
+                <i class="bi bi-check-square stat-icon"></i>
+                <div class="stat-body">
+                  <p class="stat-label">Available Books</p>
+                  <p class="stat-value">130</p>
+                </div>
+                <i class="bi bi-chevron-right stat-arrow"></i>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#" class="stat-card stat-card--light">
+                <i class="bi bi-clock stat-icon"></i>
+                <div class="stat-body">
+                  <p class="stat-label">Active Borrowings</p>
+                  <p class="stat-value">15</p>
+                </div>
+                <i class="bi bi-chevron-right stat-arrow"></i>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#" class="stat-card stat-card--black">
+                <i class="bi bi-exclamation-circle stat-icon"></i>
+                <div class="stat-body">
+                  <p class="stat-label">Overdue Books</p>
+                  <p class="stat-value">5</p>
+                </div>
+                <i class="bi bi-chevron-right stat-arrow"></i>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#" class="stat-card stat-card--dark-gray">
+                <i class="bi bi-envelope-open stat-icon"></i>
+                <div class="stat-body">
+                  <p class="stat-label">Transaction Details</p>
+                  <p class="stat-value">View a transaction</p>
+                </div>
+                <i class="bi bi-chevron-right stat-arrow"></i>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#" class="stat-card stat-card--gray">
+                <i class="bi bi-clock-history stat-icon"></i>
+                <div class="stat-body">
+                  <p class="stat-label">Borrow History</p>
+                  <p class="stat-value">View history</p>
+                </div>
+                <i class="bi bi-chevron-right stat-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- All Books -->
+          <section class="section-block">
+            <div
+              class="d-flex flex-column-reverse flex-sm-row justify-content-between align-items-sm-center gap-3"
+            >
+              <form
+                class="search-group input-group"
+                action="#"
+                method="GET"
+                role="search"
+              >
+                <input
+                  type="search"
+                  class="form-control"
+                  name="search"
+                  placeholder="Search..."
+                  aria-label="Search books"
+                />
+                <button class="btn btn-info text-white" type="submit">
+                  <i class="bi bi-search me-1"></i> Search
+                </button>
+              </form>
+              <h2 class="section-title">All Books</h2>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Book ID</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Avail</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Laravel: replace with @forelse ($books as $book) ... @empty ... @endforelse -->
+                  <tr>
+                    <td colspan="9" class="table-empty">
+                      <i class="bi bi-inbox"></i>
+                      No books to display yet.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (needed for the mobile offcanvas) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
