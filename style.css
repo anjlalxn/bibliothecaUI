@@ -84,11 +84,13 @@ h1, h2, h3, h4, h5, h6,
 .logo-placeholder {
     width: 13.75rem;  
     height: 15rem;   
-    border: 2px dashed rgba(255, 255, 255, 0.8);
-    border-radius: var(--radius-lg);
-    color: var(--color-white);
-    font-size: 0.9rem;
     margin-bottom: var(--space-xl);
+}
+
+.logo-placeholder img,
+.sidebar-logo img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .brand-name {
@@ -200,13 +202,8 @@ h1, h2, h3, h4, h5, h6,
     padding: var(--space-lg) var(--space-md);
 }
 
-/* Logo placeholder */
 .sidebar-logo {
-    height: 2.75rem;   
-    border: 2px dashed rgba(255, 255, 255, 0.8);
-    border-radius: var(--radius-sm);
-    color: var(--color-white);
-    font-size: 0.85rem;
+    height: 2.75rem;
     margin-bottom: var(--space-xl);
 }
 
