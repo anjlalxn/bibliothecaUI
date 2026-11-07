@@ -68,6 +68,14 @@ h1, h2, h3, h4, h5, h6,
     font-family: var(--font-heading);
 }
 
+.btn, input {
+  border-radius: 0.89rem !important;
+}
+
+input{
+    margin-right: 10px !important;
+}
+
 /* ==========================================================
    Login page
    ========================================================== */
